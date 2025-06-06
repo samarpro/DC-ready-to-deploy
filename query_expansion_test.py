@@ -15,13 +15,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 global_meta_dict = {}
-print(st.secrets("QDRANT_HOST"))
-llm = Client(api_key=st.secrets("GOOGLE_API_KEY"))
+print(st.secrets["QDRANT_HOST"])
+llm = Client(api_key=st.secrets["GOOGLE_API_KEY"])
 qe_llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.4, max_retries=3)
-vc = VoyageAIEmbeddings(model="voyage-3", api_key=st.secrets("VOYAGE_API_KEY"))
+vc = VoyageAIEmbeddings(model="voyage-3", api_key=st.secrets["VOYAGE_API_KEY"])
 qclient = QdrantClient(
-    url=st.secrets("QDRANT_HOST"),
-    api_key=st.secrets("QDRANT_API_KEY"),
+    url=st.secrets["QDRANT_HOST"],
+    api_key=st.secrets["QDRANT_API_KEY"],
     https=True,
     timeout=100,
     prefer_grpc=True,
