@@ -25,6 +25,7 @@ qclient = QdrantClient(
     https=True,
     timeout=100,
     prefer_grpc=True,
+    check_compatibility=False,
 )
 
 print("Qdrant client has been configured.")
