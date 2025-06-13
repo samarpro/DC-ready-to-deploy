@@ -20,9 +20,8 @@ llm = Client(api_key=st.secrets["GOOGLE_API_KEY"])
 qe_llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.4, max_retries=3)
 vc = VoyageAIEmbeddings(model="voyage-3", api_key=st.secrets["VOYAGE_API_KEY"])
 qclient = QdrantClient(
-    url='https://c0eece30-ff9a-4a8e-a91e-eeffd005d66c.europe-west3-0.gcp.cloud.qdrant.io',
+    url=st.secrets["QDRANT_HOST"],
     api_key=st.secrets["QDRANT_API_KEY"],
-    https=True,
     timeout=100,
     # prefer_grpc=True,
     # check_compatibility=False,
