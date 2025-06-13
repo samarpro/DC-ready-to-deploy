@@ -24,8 +24,8 @@ qclient = QdrantClient(
     api_key=st.secrets["QDRANT_API_KEY"],
     https=True,
     timeout=100,
-    prefer_grpc=True,
-    check_compatibility=False,
+    # prefer_grpc=True,
+    # check_compatibility=False,
 )
 
 print("Qdrant client has been configured.")
