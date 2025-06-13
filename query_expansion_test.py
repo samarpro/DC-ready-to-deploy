@@ -66,7 +66,7 @@ def retrieve_documents(query: str) -> List[str]:
         ),
     ]
     results = qclient.query_points(
-        "HQ-Deakin-Hybrid",
+        "hybrid-search",
         prefetch=prefetch,
         query=models.FusionQuery(fusion=models.Fusion.RRF),
         with_payload=True,
